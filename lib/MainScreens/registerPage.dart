@@ -12,10 +12,11 @@ class _registerPageState extends State<registerPage> {
   bool _showPassword = false;
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Container(
-            margin: EdgeInsets.all(24),
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Container(
+            height: MediaQuery.of(context).size.height,
+            margin: EdgeInsets.all(30),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
