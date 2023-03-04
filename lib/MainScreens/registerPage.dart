@@ -53,7 +53,8 @@ class _registerPageState extends State<registerPage> {
         padding: EdgeInsets.symmetric(horizontal: 5),
         child: TextField(
           decoration: InputDecoration(
-              hintText: "Matricula",
+              labelText: "Matricula",
+              hintText: "ZS00000000",
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide.none),
@@ -71,6 +72,7 @@ class _registerPageState extends State<registerPage> {
           padding: EdgeInsets.symmetric(horizontal: 5),
           child: TextField(
             decoration: InputDecoration(
+                labelText: "Contraseña",
                 hintText: "Contraseña",
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(18),
@@ -99,6 +101,7 @@ class _registerPageState extends State<registerPage> {
           padding: EdgeInsets.symmetric(horizontal: 5),
           child: TextField(
             decoration: InputDecoration(
+                labelText: "Confirmar Contraseña",
                 hintText: "Contraseña",
                 border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(18),
