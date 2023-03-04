@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:app_reconocimiento/MainScreens/registerPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -12,6 +10,8 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  bool _showPassword = false;
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -32,11 +32,7 @@ class _HomePageState extends State<HomePage> {
   _header(context) {
     return Column(
       children: [
-        Text(
-          "Bienvenido",
-          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-        ),
-        Text("Ingresa tu informacion")
+        Image.asset("assets/images/ic_uv.png"),
       ],
     );
   }
@@ -57,14 +53,25 @@ class _HomePageState extends State<HomePage> {
         SizedBox(
           height: 10,
         ),
-        TextField(
+        TextFormField(
           decoration: InputDecoration(
               hintText: "Contraseña",
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide.none),
               fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
+              suffixIcon: GestureDetector(
+                child: Icon(_showPassword == false
+                    ? Icons.visibility_off
+                    : Icons.visibility),
+                onTap: () {
+                  setState(() {
+                    _showPassword = !_showPassword;
+                  });
+                },
+              ),
               filled: true),
+          obscureText: _showPassword == false ? true : false,
         ),
         SizedBox(
           height: 30,
@@ -72,7 +79,7 @@ class _HomePageState extends State<HomePage> {
         ElevatedButton(
           onPressed: () {},
           child: Text(
-            "Login",
+            "Iniciar Sesion",
             style: TextStyle(fontSize: 20),
           ),
           style: ElevatedButton.styleFrom(
@@ -88,10 +95,13 @@ class _HomePageState extends State<HomePage> {
                 MaterialPageRoute(builder: (context) => registerPage()));
           },
           child: Text(
-            "Register",
+            "Registrar",
             style: TextStyle(fontSize: 20),
           ),
           style: ElevatedButton.styleFrom(
+            primary: Colors.white,
+            onPrimary: Colors.lightBlue,
+            side: BorderSide(color: Colors.lightBlue, width: 3),
             shape: StadiumBorder(),
             padding: EdgeInsets.symmetric(vertical: 16),
           ),

@@ -9,6 +9,7 @@ class registerPage extends StatefulWidget {
 }
 
 class _registerPageState extends State<registerPage> {
+  bool _showPassword = false;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -29,11 +30,7 @@ class _registerPageState extends State<registerPage> {
   _header(context) {
     return Column(
       children: [
-        Text(
-          "Bienvenido",
-          style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
-        ),
-        Text("Ingresa tu informacion")
+        Image.asset("assets/images/ic_uv.png"),
       ],
     );
   }
@@ -54,26 +51,48 @@ class _registerPageState extends State<registerPage> {
         SizedBox(
           height: 10,
         ),
-        TextField(
+        TextFormField(
           decoration: InputDecoration(
               hintText: "Contraseña",
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide.none),
               fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
+              suffixIcon: GestureDetector(
+                child: Icon(_showPassword == false
+                    ? Icons.visibility_off
+                    : Icons.visibility),
+                onTap: () {
+                  setState(() {
+                    _showPassword = !_showPassword;
+                  });
+                },
+              ),
               filled: true),
+          obscureText: _showPassword == false ? true : false,
         ),
         SizedBox(
           height: 10,
         ),
-        TextField(
+        TextFormField(
           decoration: InputDecoration(
               hintText: "Confirmar Contraseña",
               border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(18),
                   borderSide: BorderSide.none),
               fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
+              suffixIcon: GestureDetector(
+                child: Icon(_showPassword == false
+                    ? Icons.visibility_off
+                    : Icons.visibility),
+                onTap: () {
+                  setState(() {
+                    _showPassword = !_showPassword;
+                  });
+                },
+              ),
               filled: true),
+          obscureText: _showPassword == false ? true : false,
         ),
         SizedBox(
           height: 10,
