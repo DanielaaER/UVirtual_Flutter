@@ -1,4 +1,4 @@
-import 'package:app_reconocimiento/MainScreens/homePage.dart';
+import 'package:UVirtual/MainScreens/homePage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

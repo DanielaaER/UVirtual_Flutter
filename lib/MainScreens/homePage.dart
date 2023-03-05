@@ -1,4 +1,4 @@
-import 'package:app_reconocimiento/MainScreens/registerPage.dart';
+import 'package:UVirtual/MainScreens/registerPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 

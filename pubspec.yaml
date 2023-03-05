@@ -1,4 +1,4 @@
-name: app_reconocimiento
+name: UVirtual
 description: A new Flutter project.
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
@@ -48,7 +48,7 @@ dev_dependencies:
 flutter_icons:
   android: true
   ios: true
-  image_path: "assets/images/logo_appmain.png"
+  image_path: "assets/images/ic_app.png"
   
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -58,8 +58,8 @@ flutter_icons:
   flutter_lints: ^2.0.0
 
 flutter_native_splash:
- color: "#d9d8d7"
- image: "assets/images/ic_logo.png"
+ color: "#FFFFFF"
+ image: "assets/images/ic_app.png"
   
 
 
@@ -78,6 +78,7 @@ flutter:
   assets:
     - assets/images/
     - assets/images/lg_uv.png
+    - assets/images/ic_app.png
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
