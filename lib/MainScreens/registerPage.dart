@@ -1,5 +1,6 @@
 import 'package:UVirtual/MainScreens/homePage.dart';
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 import 'package:flutter/rendering.dart';
 
 class registerPage extends StatefulWidget {

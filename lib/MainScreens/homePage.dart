@@ -1,4 +1,7 @@
 import 'package:UVirtual/MainScreens/registerPage.dart';
+import 'package:camera/camera.dart';
+import 'camera.dart';
+import 'package:UVirtual/MainScreens/verifyFace.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
@@ -99,7 +102,10 @@ class _HomePageState extends State<HomePage> {
     return StreamBuilder(
         builder: (BuildContext context, AsyncSnapshot snapshot) {
       return ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => verifyFace()));
+        },
         child: Text(
           "Iniciar Sesion",
           style: TextStyle(fontSize: 20),
