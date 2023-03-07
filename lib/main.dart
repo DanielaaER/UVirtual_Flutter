@@ -2,7 +2,7 @@ import 'package:UVirtual/MainScreens/homePage.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
-import 'MainScreens/locator.dart';
+import 'camera/locator.dart';
 
 void main() {
   WidgetsBinding widgetsBinding = WidgetsFlutterBinding.ensureInitialized();

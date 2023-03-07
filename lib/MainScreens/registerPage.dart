@@ -1,4 +1,8 @@
+import 'package:UVirtual/components/buttons/RegisterButtonPage.dart';
 import 'package:UVirtual/MainScreens/homePage.dart';
+import 'package:UVirtual/components/fields/register/registerPasswordField.dart';
+import 'package:UVirtual/components/fields/register/registerUserField.dart';
+import 'package:UVirtual/components/fields/register/registerVerifyField.dart';
 import 'package:flutter/material.dart';
 import 'package:camera/camera.dart';
 import 'package:flutter/rendering.dart';
@@ -28,118 +32,22 @@ class _registerPageState extends State<registerPage> {
             SizedBox(
               height: 100,
             ),
-            _registeruserTextField(),
+            registerUserFiedl(),
             SizedBox(
               height: 15,
             ),
-            _registerpasswordTextField(),
+            registerPasswordField(),
             SizedBox(
               height: 15,
             ),
-            _passwordVerifyTextField(),
+            registerVerifyField(),
             SizedBox(
               height: 30,
             ),
-            _registerbottomRegister(),
+            RegisterButtonPage(),
           ]),
         )),
       ),
     );
-  }
-
-  Widget _registeruserTextField() {
-    return StreamBuilder(
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-      return Container(
-        padding: EdgeInsets.symmetric(horizontal: 5),
-        child: TextField(
-          decoration: InputDecoration(
-              labelText: "Matricula",
-              hintText: "ZS00000000",
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(18),
-                  borderSide: BorderSide.none),
-              fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
-              filled: true),
-        ),
-      );
-    });
-  }
-
-  Widget _registerpasswordTextField() {
-    return StreamBuilder(
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-      return Container(
-          padding: EdgeInsets.symmetric(horizontal: 5),
-          child: TextField(
-            decoration: InputDecoration(
-                labelText: "Contraseña",
-                hintText: "Contraseña",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(18),
-                    borderSide: BorderSide.none),
-                fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
-                suffixIcon: GestureDetector(
-                  child: Icon(_showPassword == false
-                      ? Icons.visibility_off
-                      : Icons.visibility),
-                  onTap: () {
-                    setState(() {
-                      _showPassword = !_showPassword;
-                    });
-                  },
-                ),
-                filled: true),
-            obscureText: _showPassword == false ? true : false,
-          ));
-    });
-  }
-
-  Widget _passwordVerifyTextField() {
-    return StreamBuilder(
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-      return Container(
-          padding: EdgeInsets.symmetric(horizontal: 5),
-          child: TextField(
-            decoration: InputDecoration(
-                labelText: "Confirmar Contraseña",
-                hintText: "Contraseña",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(18),
-                    borderSide: BorderSide.none),
-                fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
-                suffixIcon: GestureDetector(
-                  child: Icon(_showPassword == false
-                      ? Icons.visibility_off
-                      : Icons.visibility),
-                  onTap: () {
-                    setState(() {
-                      _showPassword = !_showPassword;
-                    });
-                  },
-                ),
-                filled: true),
-            obscureText: _showPassword == false ? true : false,
-          ));
-    });
-  }
-
-  Widget _registerbottomRegister() {
-    return StreamBuilder(
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-      return ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => HomePage()));
-        },
-        child: Text(
-          "Registrar",
-          style: TextStyle(fontSize: 20),
-        ),
-        style: ElevatedButton.styleFrom(
-            shape: StadiumBorder(),
-            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 120)),
-      );
-    });
   }
 }

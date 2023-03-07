@@ -1,6 +1,10 @@
+import 'package:UVirtual/components/buttons/MyLoginButton.dart';
+import 'package:UVirtual/components/buttons/MyRegisterButton.dart';
+import 'package:UVirtual/components/fields/login/fieldformPassword.dart';
+import 'package:UVirtual/components/fields/login/fieldformUser.dart';
 import 'package:UVirtual/MainScreens/registerPage.dart';
 import 'package:camera/camera.dart';
-import 'camera.dart';
+import '../camera/camera.dart';
 import 'package:UVirtual/MainScreens/verifyFace.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -31,112 +35,22 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: 120,
             ),
-            _userTextField(),
+            FieldUserLogin(),
             SizedBox(
               height: 15,
             ),
-            _passwordTextField(),
+            FieldPasswordLogin(),
             SizedBox(
               height: 30,
             ),
-            _bottomLogin(),
+            MyLoginButton(),
             SizedBox(
               height: 15,
             ),
-            _bottomRegister(),
+            MyRegisterButton(),
           ]),
         )),
       ),
     );
-  }
-
-  Widget _userTextField() {
-    return StreamBuilder(
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-      return Container(
-        padding: EdgeInsets.symmetric(horizontal: 5),
-        child: TextField(
-          decoration: InputDecoration(
-              labelText: "Matricula",
-              hintText: "ZS00000000",
-              border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(18),
-                  borderSide: BorderSide.none),
-              fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
-              filled: true),
-        ),
-      );
-    });
-  }
-
-  Widget _passwordTextField() {
-    return StreamBuilder(
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-      return Container(
-          padding: EdgeInsets.symmetric(horizontal: 5),
-          child: TextField(
-            decoration: InputDecoration(
-                labelText: "Contraseña",
-                hintText: "Contraseña",
-                border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(18),
-                    borderSide: BorderSide.none),
-                fillColor: Theme.of(context).primaryColor.withOpacity(0.1),
-                suffixIcon: GestureDetector(
-                  child: Icon(_showPassword == false
-                      ? Icons.visibility_off
-                      : Icons.visibility),
-                  onTap: () {
-                    setState(() {
-                      _showPassword = !_showPassword;
-                    });
-                  },
-                ),
-                filled: true),
-            obscureText: _showPassword == false ? true : false,
-          ));
-    });
-  }
-
-  Widget _bottomLogin() {
-    return StreamBuilder(
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-      return ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => verifyFace()));
-        },
-        child: Text(
-          "Iniciar Sesion",
-          style: TextStyle(fontSize: 20),
-        ),
-        style: ElevatedButton.styleFrom(
-            shape: StadiumBorder(),
-            padding: EdgeInsets.symmetric(vertical: 16, horizontal: 100)),
-      );
-    });
-  }
-
-  _bottomRegister() {
-    return StreamBuilder(
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-      return ElevatedButton(
-        onPressed: () {
-          Navigator.push(
-              context, MaterialPageRoute(builder: (context) => registerPage()));
-        },
-        child: Text(
-          "Registrar",
-          style: TextStyle(fontSize: 20),
-        ),
-        style: ElevatedButton.styleFrom(
-          primary: Colors.white,
-          onPrimary: Colors.lightBlue,
-          side: BorderSide(color: Colors.lightBlue, width: 3),
-          shape: StadiumBorder(),
-          padding: EdgeInsets.symmetric(vertical: 16, horizontal: 120),
-        ),
-      );
-    });
   }
 }
