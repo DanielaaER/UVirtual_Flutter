@@ -17,7 +17,8 @@ class _registerPasswordFieldState extends State<registerPasswordField> {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
       return Container(
           padding: EdgeInsets.symmetric(horizontal: 5),
-          child: TextField(
+          child: TextFormField(
+            keyboardType: TextInputType.visiblePassword,
             decoration: InputDecoration(
                 labelText: "Contraseña",
                 hintText: "Contraseña",

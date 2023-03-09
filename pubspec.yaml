@@ -39,6 +39,7 @@ dependencies:
   flutter_native_splash: ^2.2.18
   camera: ^0.10.3+2
   get_it: ^7.2.0
+  mask_text_input_formatter: ^2.4.0
   
 
 dev_dependencies:

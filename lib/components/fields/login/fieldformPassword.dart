@@ -17,7 +17,7 @@ class _FieldPasswordLoginState extends State<FieldPasswordLogin> {
         builder: (BuildContext context, AsyncSnapshot snapshot) {
       return Container(
           padding: EdgeInsets.symmetric(horizontal: 5),
-          child: TextField(
+          child: TextFormField(
             decoration: InputDecoration(
                 labelText: "Contraseña",
                 hintText: "Contraseña",
